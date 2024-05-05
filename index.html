@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Julia's Bazaar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">    
+    <style>
+        body {
+            font-family: 'Jaro', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-color: #201f2c; /* Dark background */
+            margin: 0;
+            color: #bdcae9; /* Light text color for readability */
+        }
+        h1, h2 {
+            text-align: center;
+            color: #7e80ea; /* Futuristic blue for headings */
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; /* Adjust as needed */
+            margin: 20px 0;
+        }
+        input, button {
+            margin: 0 10px; /* Reduced margin */
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #37354d;
+            background-color: #37354d;
+            color: #fff;
+            width: 200px;
+        }
+        button {
+            background-color: #383a67;
+            border: none;
+            cursor: pointer;
+            width: auto;
+        }
+        button:hover {
+            background-color: #91add0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%; /* Full width for alignment */
+            text-align: center;
+        }
+        li {
+            background: #171624; /* Darker background for cards */
+            margin-top: 8px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #171624;
+            color: #fff; /* White text for cards */
+            list-style: none;
+        }
+        .item-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item-details button {
+            margin: 0;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Julia's Bazaar</h1> 
+
+    <div>
+        <h2>sell items here</h2>
+            <div class="form-container">
+            <input id="name" type="text" placeholder="what item are you listing?" />
+            <input id="price" type="number" placeholder="for how much?" />
+            <button onclick="listItem()">List Item</button>
+        </div>
+    </div>
+
+    <h2>buy items</h2>
+    <ul id="items"></ul>
+
+    <h2>previous transactions for this session</h2>
+    <ul id="itemHashes"></ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script src="app.js"></script> 
+</body>
+</html>
